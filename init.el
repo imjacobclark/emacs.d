@@ -5,7 +5,7 @@
 ;; You may delete these explanatory comments.
 
 ; list the packages you want
-(setq package-list '("tide" "company"))
+(setq package-list '("company"))
 
 (require 'package)
 
