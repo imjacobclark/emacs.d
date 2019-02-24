@@ -1,18 +1,19 @@
 (require 'package)
 
-(when (< emacs-major-version 27)
-    (setq package-enable-at-startup nil)
-    (package-initialize))
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list 'package-archives
-             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-(setq package-archive-priorities
-      '(("melpa-stable" . 20) ("gnu" . 10) ("melpa" . 0)))
+(setq package-list '(tide company))
 
-(package-refresh-contents)
-(package-install 'tide)
-(package-install 'company)
+; list the repositories containing them
+(setq package-archives '(("melpa" . "http://melpa.org/packages/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")))
+
+(package-initialize)
+
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
 
 (require 'linum)
 
