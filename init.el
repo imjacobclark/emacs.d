@@ -12,7 +12,7 @@
 (setq package-list '("tide" "company"))
 
 ; list the repositories containing them
-(setq package-archives '(("elpa" . "http://tromey.com/elpa/")
+(setq package-archives '(("melpa-stable" . "https://stable.melpa.org/packages/")
                          ("gnu" . "http://elpa.gnu.org/packages/")))
 
 ; activate all the packages (in particular autoloads)
