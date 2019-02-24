@@ -5,7 +5,7 @@
 ;; You may delete these explanatory comments.
 
 ; list the packages you want
-(setq package-list '("company"))
+(setq package-list '("tide" "company"))
 
 (require 'package)
 
@@ -28,15 +28,16 @@ There are two things you can do about this warning:
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 
 (package-initialize)
+(package-install "tide")
 
 ; fetch the list of packages available 
-(unless package-archive-contents
-  (package-refresh-contents))
+;(unless package-archive-contents
+;  (package-refresh-contents))
 
 ; install the missing packages
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
+;(dolist (package package-list)
+;  (unless (package-installed-p package)
+;    (package-install package)))
 
 (require 'linum)
 
