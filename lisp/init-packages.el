@@ -1,6 +1,6 @@
 (require 'package)
 
-(setq package-list '(tide company))
+(setq package-list '(rjsx-mode tide web-mode company markdown-mode))
 
 ; list the repositories containing them
 (setq package-archives '(("melpa" . "http://melpa.org/packages/")
